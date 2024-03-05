@@ -1,17 +1,11 @@
 package com.example.task1
 
-import android.app.Activity
-import android.app.PendingIntent.getActivity
 import android.app.ProgressDialog
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
-import android.view.View
 import android.widget.*
-import androidx.core.view.isVisible
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         // to navigate from main activity to second activity and send data
         val displayButton = findViewById<Button>(R.id.displayButton)
 
-        val name=findViewById<EditText>(R.id.edText)
+        val name=findViewById<EditText>(R.id.name_edText)
+        val age=findViewById<EditText>(R.id.age_edText)
 
         displayButton.setOnClickListener {
 
@@ -34,7 +29,14 @@ class MainActivity : AppCompatActivity() {
 
             //intent.data= Uri.parse(name.text.toString())
             //or
-            intent.putExtra("key",name.text.toString())
+            intent.putExtra("key","welcome every one")
+
+            /////////////////////////////////////////////////////////
+            //to send pair of data
+            val extras = Bundle()
+            extras.putString("name", name.text.toString())
+            extras.putString("age", age.text.toString())
+            intent.putExtras(extras)
             startActivity(intent)
 
         }

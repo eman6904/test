@@ -17,12 +17,16 @@ class SecondActivity : AppCompatActivity() {
 
 
         val backButton=findViewById<Button>(R.id.backButton)
-        val passedValue=findViewById<TextView>(R.id.passedValue)
+        val age=findViewById<TextView>(R.id.age)
+        val name=findViewById<TextView>(R.id.name)
+        val welcome=findViewById<TextView>(R.id.welcome)
 
         //to receive data
         //  passedValue.text=intent.data?.toString()
         // or
-        passedValue.text="Hello "+intent.getStringExtra("key")
+        welcome.text=intent.getStringExtra("key")
+        name.text="Hello "+intent.getStringExtra("name")
+        age.text=(intent.getStringExtra("age")).toString()
 
         //to navigate from second activity to main activity
         backButton.setOnClickListener{
