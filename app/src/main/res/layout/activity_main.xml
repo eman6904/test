@@ -1,69 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40sp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_10sdp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/displayButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_30sdp"
-        android:layout_marginBottom="108dp"
-        android:text="Display Second Activity"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age_edText"
-        app:layout_constraintVertical_bias="0.172" />
-
-    <EditText
-        android:id="@+id/age_edText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:gravity="center"
-        android:hint="Enter your age"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.612"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello in Main Activity"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/age_edText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
-
-    <EditText
-        android:id="@+id/name_edText"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="Enter your name"
+        android:text="LOGIN"
         android:textColor="@color/black"
         android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_15sdp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/age_edText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title1"
-        app:layout_constraintVertical_bias="0.687" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="@dimen/_15sdp"
+       android:padding="@dimen/_5sdp"
+       android:orientation="vertical">
+       <TextView
+           android:id="@+id/txtEmail"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Email"
+           android:textSize="@dimen/_15sdp"
+           android:textStyle="bold"
+           />
+
+       <EditText
+           android:id="@+id/edEmail"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/_40sdp"
+           android:background="@drawable/shape"
+           android:padding="@dimen/_5sdp"
+           android:hint="Enter your email"
+           android:text="" />
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:padding="@dimen/_5sdp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/edPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/shape"
+            android:padding="@dimen/_5sdp"
+            android:hint="Enter your password"
+            android:text="" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </CheckBox>
+            <TextView
+                android:id="@+id/remember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remember me"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="@dimen/_20sdp"
+      android:layout_marginLeft="@dimen/_20sdp"
+      android:orientation="vertical">
+      <Button
+          android:id="@+id/submitButton"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textAllCaps="false"
+          android:textStyle="bold"
+          android:text="Sign In" />
+      <TextView
+          android:id="@+id/forgetPassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Forget password?"
+          android:gravity="end"
+          android:textSize="@dimen/_15sdp"
+          android:textStyle="bold"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="3"
+          android:gravity="center"
+          android:layout_marginTop="@dimen/_15sdp"
+          android:orientation="horizontal">
+          <View
+              android:id="@+id/divider1"
+              android:layout_width="match_parent"
+              android:layout_height="3dp"
+              android:layout_weight="1.25"
+              android:background="?android:attr/listDivider" />
+          <TextView
+              android:id="@+id/or"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="OR"
+              android:layout_weight="2"
+              android:gravity="center"
+              android:textSize="@dimen/_15sdp"
+              android:textStyle="bold">
+
+          </TextView>
+          <View
+              android:id="@+id/divider2"
+              android:layout_width="match_parent"
+              android:layout_height="3dp"
+              android:layout_weight="1.25"
+              android:background="?android:attr/listDivider" />
+
+      </LinearLayout>
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_80sdp"
+        android:layout_marginRight="@dimen/_80sdp"
+
+        >
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1.25"
+            app:srcCompat="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/google"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1.25"
+            app:srcCompat="@drawable/google" />
+
+        <ImageView
+            android:id="@+id/linkedin"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1.25"
+            app:srcCompat="@drawable/linkedin" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need an account?"
+            android:layout_weight="2"
+            android:gravity="end"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="#3C4FD8"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>
